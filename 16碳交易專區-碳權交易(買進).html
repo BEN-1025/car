@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16碳交易專區-碳權交易(買進)</title>
+    <link rel="stylesheet" href="./main1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.5/dist/web3.min.js"></script>
+    <script src="./connectwallet1.js"></script>
+    <script src="./買進.js" defer></script>
+</head>
+
+<body>
+    <div class="menu">
+        <a href="./main.html" class="brand"><img src="./carbon/logo1.jpg" alt="CarbonLink Logo"></a>
+        <nav>
+            <h2>CarbonLink</h2>
+            <ul>
+                <li><a href="#">碳交易專區 V</a>
+                    <ul>
+                        <li><a href="./13碳交易專區-歷史交易紀錄.html">交易歷史紀錄</a></li>
+                        <li><a href="./15碳交易專區-碳權交易.html">交易碳權</a></li>
+                        <li><a href="#">查看碳權單位價格</a></li>
+                        <li><a href="./17碳交易專區-已委託清單.html">下單列表</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">資料專區 V</a>
+                    <ul>
+                        <li><a href="./資料專區-代幣錢包.html">代幣錢包</a></li>
+                        <li><a href="#">各公司碳盤列表</a></li>
+                        <li><a href="./資料修改.html">資料修改</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">綠樹成蔭 V</a>
+                    <ul>
+                        <li><a href="#">小樹苗數量</a></li>
+                        <li><a href="#">年度活動資訊</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">常見問題 V</a>
+                    <ul>
+                        <li><a href="#">常見問題</a></li>
+                        <li><a href="#">智能機器客服</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="aside">
+        <aside>
+            <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#infomodal"><button onclick="connectWallet()"><img src="carbon/身份標籤.jpg"></button></a>
+            <!-- 跳出視窗內容 -->
+            <div class="modal fade" id="infomodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Header -->
+                        <div class="modal-header">
+                            <h3>帳戶資訊</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Body -->
+                        <div class="modal-body" id="modal-Body">
+                            <!-- 登入表單 -->
+                            <form>
+                                <div class="form-group">
+                                    <h3><strong>代幣餘額:</strong><span id="customTokenBalance"></span></h3>
+                                    
+                                </div>
+                                <!-- password -->
+                                <div class="form-group">
+                                    <h3><strong>碳權餘額:</strong><span id="carbonBalance"></span></h3>
+                                </div>
+                                <!-- checkbox -->
+                                <div class="form-group">
+                                    <h3><strong>錢包地址:</strong><span id="walletAddress"></span></h3>
+                                </div>
+                                <!-- 送出按鈕 -->
+                            </form>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <body>
+<!-- 1. 買進碳權 (置中) -->
+<div style="position: relative; width: 100%; text-align: center;">
+    <div style="position: absolute; width: 199px; height: 38px; margin-top: 115px; left: 50%; transform: translateX(-50%); font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 32px; line-height: 38px; color: #000000;">
+        買進碳權
+    </div>
+</div>
+
+<!-- 2. 下單 (置中) -->
+<div style="position: relative; width: 100%; text-align: center; margin-top: 170px;">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 10px 17px; gap: 10px; position: absolute; width: 1111px; height: 56px; left: 50%; transform: translateX(-50%); background: #01415C; border-radius: 20px; font-size: 28px; font-weight: 600; color: #FFFFFF;">
+        下單
+    </div>
+</div>
+
+      
+    <style>        
+     .price-quote-container {
+          position: absolute;
+          width: 1111px;
+          height: 48px;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 308px;
+          background: #FFFFFF;
+          border: 1px solid #000000;
+          border-radius: 10px 10px 0px 0px;
+        }   
+
+
+       .price-quote-header {
+          position: absolute;
+          width: 64px;
+          height: 39px;
+          left: 10px;
+          top: -50px;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 39px;
+          display: flex;
+         align-items: left;
+         color: #000000;
+        } 
+
+        .price-quote-table {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: flex-end;
+          align-content: flex-start;
+          padding: 0;
+          gap: 10px; /* 將間距設置為您想要的值，例如10px */
+          isolation: isolate;
+          width: auto; /* 讓寬度自動調整為內容大小 */
+          max-width: 100%; /* 最大寬度為100%，以避免在大螢幕上過度擴展 */
+          height: 48px;
+        }
+
+
+       .price-quote-item {
+          flex: 1;
+          padding: 10px;   
+          text-align: center;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 22px;
+        }
+    </style>
+        <!-- 3. 報價 -->
+<!-- 報價 -->
+
+<div class="price-quote-container">
+    
+    <div class="price-quote-header">報價</div>
+    
+ <div class="price-quote-table">
+     <div class="price-quote-item">買量</div>
+     <div class="price-quote-item">買價</div>
+     <div class="price-quote-item">賣量</div>
+     <div class="price-quote-item">賣價</div>
+ </div>
+    
+</div>
+
+              
+      
+    <style>
+        /* 基本樣式 */
+       .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          width: 1111px;
+          height: 123px;
+          margin: 654px auto 0;
+        }
+
+        .price-container, .quantity-container, .estimated-amount-container {
+         width: 283px;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         margin-bottom: 210px; /* 向上移動50px */
+        }
+
+        .price-header, .quantity-header, .estimated-amount-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
+
+        .price-title, .quantity-title, .estimated-amount-title {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 28px;
+         color: #000000;
+        }
+
+        .price-unit, .quantity-hint, .estimated-amount-hint {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+         color: #757575;
+        }
+
+        .price-input, .quantity-input {
+         width: 100%;
+         height: 40px;
+         padding: 10px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+        }
+
+        .estimated-amount-container {
+         width: 475px;
+         background: #FFFFFF;
+         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+         border-radius: 10px;
+         padding: 20px;
+        }
+
+        .estimated-amount-value {
+         font-family: 'Inter';
+         font-size: 18px;
+         font-weight: bold;
+         padding-left: 0px;
+        }
+
+       /* 媒體查詢：螢幕寬度小於 1200px 時調整容器寬度 */
+       @media (max-width: 1200px) {
+         .container {
+             width: 90%;
+             margin: 654px auto 0;
+            }
+
+        .price-container, .quantity-container, .estimated-amount-container {
+          width: 30%;
+        }
+    }
+
+    /* 媒體查詢：螢幕寬度小於 768px 時調整佈局 */
+        @media (max-width: 768px) {
+         .container {
+             flex-direction: column;
+             align-items: stretch;
+             margin-top: 70px;
+            }
+
+            .price-container, .quantity-container, .estimated-amount-container {
+              width: 100%;
+           }
+        }
+
+    </style>
+    <div class="container">
+      <!-- 5. 價格 -->
+      <div class="price-container">
+         <!-- 價格標題及單位提示 -->
+          <div class="price-header">
+             <div class="price-title">價格</div>
+             <div class="price-unit">跳動單位：1</div>
+          </div>
+         <!-- 價格輸入框 -->
+          <input type="number" id="priceInput" class="price-input" placeholder="輸入價格">
+     </div>
+
+      <!-- 6. 數量 -->
+      <div class="quantity-container">
+         <!-- 數量標題及提示 -->
+         <div class="quantity-header">
+             <div class="quantity-title">數量</div>
+             <div class="quantity-hint">最小:1噸</div>
+         </div>
+         <!-- 數量輸入框 -->
+         <input type="number" id="quantityInput" class="quantity-input" placeholder="輸入數量">
+      </div>
+
+       <!-- 7. 預估金額 -->
+       <div class="estimated-amount-container">
+          <div class="estimated-amount-header">
+              <!-- 預估金額顯示 -->
+              <div id="estimatedAmount" class="estimated-amount-value">預估金額: $0</div>                                    
+          </div>
+       </div>
+   </div>
+
+    <div style="position: absolute; width: 1111px; height: 84px; left: 50%; transform: translateX(-50%); top: 610px;">
+        <button id="purchaseButton"onclick="showAlert();purchaseCarbonCredits()" style="width: 100%; height: 70%; background: #01415C; border-radius: 20px; font-size: 28px; font-weight: 600; color: #FFFFFF; border: none; cursor: pointer;">
+          一鍵下單
+       </button>
+   </div>
+
+   <script>
+      function showAlert() {
+         alert('下單成功！');
+        }
+        const priceInput = document.getElementById('priceInput');
+        const quantityInput = document.getElementById('quantityInput');
+        const estimatedAmount = document.getElementById('estimatedAmount');
+        
+
+        // 監聽價格和數量輸入框的變化
+        priceInput.addEventListener('input', updateEstimatedAmount);
+        quantityInput.addEventListener('input', updateEstimatedAmount);
+
+        
+        // 更新預估金額
+        function updateEstimatedAmount() {
+           const price = parseFloat(priceInput.value) || 0;
+           const quantity = parseFloat(quantityInput.value) || 0;
+           const totalCost = price * quantity;
+           estimatedAmount.textContent = `預估金額: $${totalCost}`;
+           const fee=totalCost*0.05
+           estimatedAmount.textContent=`預估金額: $${totalCost.toFixed(2)} (手續費: $${fee.toFixed(2)})`;
+          
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('purchaseButton').addEventListener('click', purchaseCarbonCredits);
+        });
+    </script>
+
+</body>
+      
+    <div class="footer">
+        <footer>
+            <a href="#" class="brand1"><img src="./carbon/logo.jpg" alt="CarbonLink Logo"></a>
+        </footer>
+    </div>
+  
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CarbonLink</title> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="公司資訊.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.8.0/web3.min.js"></script>
+    <script src="/公司資訊.js"></script>
+</head>
+<body>
+    <div class="menu">
+        <a href="/main.html" class="brand"><img src="carbon/logo1.jpg"></a>
+        <nav>
+            <h2>CarbonLink</h2>
+            <ul>                
+                <li><a href="#">碳交易專區 V</a>
+                    <ul>
+                        <li><a href="/13碳交易專區-歷史交易紀錄/13碳交易專區-歷史交易紀錄.html">交易歷史紀錄</a></li>
+                        <li><a href="/15碳交易專區-碳權交易/15碳交易專區-碳權交易.html">交易碳權</a></li>
+                        <li><a href="#">查看碳權單位價格</a></li>
+                        <li><a href="/17碳交易專區-已委託清單/17碳交易專區-已委託清單 (1).html">下單列表</a></li>   
+                    </ul>
+                </li>
+                <li><a href="#">資料專區 V</a>
+                    <ul>
+                        <li><a href="/11資料專區-代幣錢包/資料專區-代幣錢包.html">代幣錢包</a></li>
+                        <li><a href="#">各公司碳盤列表</a></li>
+                        <li><a href="/資料修改.html">資料修改</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">綠樹成蔭 V</a>
+                    <ul>
+                        <li><a href="#">小樹苗數量</a></li>
+                        <li><a href="#">年度活動資訊</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">常見問題 V</a>
+                    <ul>
+                        <li><a href="#">常見問題</a></li>
+                        <li><a href="#">智能機器客服</a></li>
+                    </ul> 
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="aside">
+        <aside>
+            <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#infomodal"><img src="carbon/身份標籤.jpg"></a>
+
+            <!-- 跳出視窗內容 -->
+            <div class="modal fade" id="infomodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Header -->
+                        <div class="modal-header">
+                            <h3>帳戶資訊</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Body -->
+                        <div class="modal-body" id="modal-Body">
+                            <!-- 登入表單 -->
+                            <form>
+                                <div class="form-group">
+                                    <h3>代幣餘額</h3>
+                                </div>
+                                <div class="form-group">
+                                    <h3>碳權餘額</h3>
+                                </div>
+                                <div class="form-group">
+                                    <h3>錢包地址</h3>
+                                </div>
+                            </form>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <div class="content">
+        <div class="centered">
+            <h1 class="title"></h1>
+        </div>
+        <div class="vertical-text-container">
+            <h3 class="vertical-text">公司資訊</h3>
+        </div>
+        <form class="data-form">
+            <div class="row">
+                <div class="col">
+                    <label for="company-name">公司名稱：</label>
+                    <span id="company-name-display"></span>
+                    
+                </div>
+                <div class="col">
+                    <label for="business-address">營業地址：</label>
+                    <span id='business-address-display'></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="tax-id">統一編號：</label>
+                    <span id="tax-id-display" ></span>
+                </div>
+                <div class="col">
+                    <label for="pin">工商憑證PIN碼：</label>
+                    <span id="business-pin-display"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="responsible-person">公司負責人：</label>
+                    <span id="responsible-person-display" ></span>
+                </div>
+                <div class="col">
+                    <label for="contact-phone">聯絡電話：</label>
+                    <span id="contact-phone-display"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="contact-name">聯絡人姓名：</label>
+                    <span id="contact-name-display" ></span>
+                </div>
+                <div class="col">
+                    <label for="position">職位：</label>
+                    <span id="position-display" ></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="id-number">身分證字號：</label>
+                    <span id="id-number-display" ></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="wallet-address">錢包地址：</label>
+                    <span id="wallet-address-display" ></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a href="/會員身分審核.html" ><button type="button" class="btn btn-success"><b>返回身分審核</b></button></a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="footer">
+        <footer>
+            <a href="#" class="brand1"><img src="/carbon/logo.jpg"></a>
+        </footer>
+    </div>
+</body>
+</html>

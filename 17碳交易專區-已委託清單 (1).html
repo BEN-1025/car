@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17碳交易專區-已委託清單</title>
+    <link rel="stylesheet" href="./main1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.5/dist/web3.min.js"></script>
+    <script src="./connectwallet1.js"></script>
+    <script src="./委託.js"></script>
+    <style>
+        body{
+            margin: 0;
+            padding:0;
+            font-family: sans-serif;
+            background-color: rgb(193, 231, 109) !important;
+            z-index: 1;
+        }
+        section{
+            width:100%;
+            height:100vh;
+            background-size: cover;
+        }
+        .menu{
+            position:absolute;
+            top:0%;
+            width:100%;
+            background:rgb(219, 243, 167);
+            padding:0 5vw;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgba(0,0,0,.2);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu img{
+            float:left;
+            width:6vw;
+            margin-right: 1.5vw;
+        }
+        nav{
+            position:relative;
+            clear:right;
+        }
+        nav ul{
+            margin:0;
+            padding:0;
+            display:flex;
+        }
+        .menu h2{
+            float:left;
+            position: relative;;
+            font-size: 2.2vw;
+            font-family: sans-serif;
+            align-items: center;
+            margin:0;
+            display:flex;
+            justify-content: center;
+            transform: translateY(60%);
+        } 
+        nav ul li{
+            list-style: none;
+        }
+        nav ul li a{
+            color:black;
+            font-family: sans-serif;
+            font-size: 1.5vw;
+            font-weight: bold;
+            padding: 2.2vw 1.5vw;
+            text-decoration: none;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        nav ul li a:hover{
+            background:rgba(1,149,135);
+            color:#fff;
+        }
+        nav ul li ul{
+            display:block;
+            background: rgba(255,255,255);
+            position: absolute;
+            margin-top: 1px;
+            box-shadow: 0 0.2px 0.5px rgba(0,0,0,.5);
+            opacity:0;
+            visibility:hidden;
+            transition: .5s;
+            font-size:15px;
+            z-index: 2;
+        }
+        nav ul li:hover ul{
+            opacity:1;
+            visibility:visible;
+        }
+        .footer{
+            position:fixed;
+            bottom:0;
+            height:3vw;
+            width:100%;
+            background:rgb(219, 243, 167);
+            padding:0 5vw;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgba(0,0,0,.2);
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer img{
+            display:block;
+            margin:0 auto;
+            max-width: 1vw ;
+            height:auto;
+            font-size: 2.2vw;
+            font-family: sans-serif; 
+        }
+        .modal-header h3 {
+            font-size: 30px;
+            color: blueviolet;
+            /* 置中 */
+            position: absolute;
+            top: 7%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .modal-content {
+            background-color: burlywood;
+        }
+        .modal-body form .account,
+        .modal-body form .password {
+            margin: 30px;
+            width: 90%;
+            border-radius: 20px;
+        }
+        .remember {
+            margin-bottom: 20px;
+        }
+        .modal-body form .btn {
+            width: 100%;
+            font-size: 25px;
+            color: white;
+        }
+        .table-container {
+            margin: 0 auto;
+        width: 90%;
+        max-width: 1387px;
+        background: #01415C;
+        border-radius: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+        }
+
+        .aside a img {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="./main.html" class="brand"><img src="./carbon/logo1.jpg" alt="CarbonLink Logo"></a>
+        <nav>
+            <h2>CarbonLink</h2>
+            <ul>
+                <li><a href="#">碳交易專區 V</a>
+                    <ul>
+                        <li><a href="./13碳交易專區-歷史交易紀錄.html">交易歷史紀錄</a></li>
+                        <li><a href="./15碳交易專區-碳權交易.html">交易碳權</a></li>
+                        <li><a href="#">查看碳權單位價格</a></li>
+                        <li><a href="./17碳交易專區-已委託清單.html">下單列表</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">資料專區 V</a>
+                    <ul>
+                        <li><a href="./資料專區-代幣錢包.html">代幣錢包</a></li>
+                        <li><a href="#">各公司碳盤列表</a></li>
+                        <li><a href="./資料修改.html">資料修改</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">綠樹成蔭 V</a>
+                    <ul>
+                        <li><a href="#">小樹苗數量</a></li>
+                        <li><a href="#">年度活動資訊</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">常見問題 V</a>
+                    <ul>
+                        <li><a href="#">常見問題</a></li>
+                        <li><a href="#">智能機器客服</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="aside">
+        <aside>
+            <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#infomodal"><button onclick="connectWallet()"><img src="./carbon/身份標籤.jpg"></button></a>
+            <!-- 跳出視窗內容 -->
+            <div class="modal fade" id="infomodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Header -->
+                        <div class="modal-header">
+                            <h3>帳戶資訊</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Body -->
+                        <div class="modal-body" id="modal-Body">
+                            <!-- 登入表單 -->
+                            <form>
+                                <div class="form-group">
+                                    <h3><strong>代幣餘額:</strong><span id="customTokenBalance"></span></h3>
+                                    
+                                </div>
+                                <!-- password -->
+                                <div class="form-group">
+                                    <h3><strong>碳權餘額:</strong><span id="carbonBalance"></span></h3>
+                                </div>
+                                <!-- checkbox -->
+                                <div class="form-group">
+                                    <h3><strong>錢包地址:</strong><span id="walletAddress"></span></h3>
+                                </div>
+                                <!-- 送出按鈕 -->
+                            </form>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+
+    <div class="footer">
+        <footer>
+            <a href="#" class="brand1"><img src="./carbon/logo.jpg" alt="CarbonLink Logo"></a>
+        </footer>
+    </div>
+
+    <body>
+        <!-- 下單列表 (置中) -->
+        <div style="text-align: center; margin-top: 7%;">
+            <div style="font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 30px; line-height: 58px; color: #000000;display:flex;justify-content: center;">
+                下單列表
+            </div>
+        </div>
+    
+        <!-- 您的下單記錄永遠記錄在此 (置中) -->
+        <div style="text-align: center; margin-top: 10px;">
+            <div style="font-family: 'Inter'; font-style: normal; font-weight: 400; font-size: 27px; line-height: 39px; color: #000000;">
+                您的下單記錄永遠記錄在此
+            </div>
+        </div>
+    
+        <div style="
+            margin: 20px auto;
+            padding: 10px 20px;
+            max-width: 90%; /* 調整最大寬度以適應不同螢幕 */
+            height:auto;
+            background: #01415C;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #FFFFFF;
+        ">
+            <!-- 表格容器 -->
+            <table style="
+                width: 100%;
+                border-collapse: collapse;
+            ">
+                <thead>
+                    <tr>
+                        <th style="text-align: left; padding: 10px;">序號</th>
+                        <th style="text-align: left; padding: 10px;">買進/賣出</th>
+                        <th style="text-align: left; padding: 10px;">價格</th>
+                        <th style="text-align: left; padding: 10px;">數量</th>
+                        <th style="text-align: left; padding: 10px;">預估手續費</th>
+                        <th style="text-align: left; padding: 10px;">出帳金額</th>
+                        <th style="text-align: left; padding: 10px;">狀態</th>
+                        <th style="text-align: left; padding: 10px;">委託日期</th>
+                        <th style="text-align: left; padding: 10px;">修改訂單</th>
+                    </tr>
+                </thead>
+    
+                <tbody id="order-table-tbody">
+                 
+                </tbody>   
+
+            </table>
+        </div>
+    </body>
+    
+        
+
+          <!-- 刪單與否的彈出框 -->
+          <div id="deleteModal" style="position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4); display: none;">
+            <div style="background-color: #005148; margin: 15% auto; padding: 20px; border-radius: 15px; width: 30%;">
+                <h2 style="color: white; text-align: center;">是否要刪除訂單?</h2>
+
+              <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <button id="deleteConfirm" style="background-color: #01415C; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-right: 10px;">刪除</button>
+                <button id="deleteCancel" style="background-color: #01415C; color: white; padding: 10px 20px; border: none; border-radius: 5px;">取消</button>
+              </div>
+            </div>
+          </div>
+        
+          <script>
+            const tbody = document.getElementById('order-table-body');
+            data.forEach(item=>{
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+                    <td style="padding: 10px; text-align: center;">${item.id}</td>
+                    <td style="padding: 10px; text-align: center;">${item.operation}</td>
+                    <td style="padding: 10px;">${item.price.toFixed(2)}</td>
+                    <td style="padding: 10px;">${item.quantity}</td>
+                    <td style="padding: 10px;">${item.fee.toFixed(2)}</td>
+                    <td style="padding: 10px;">${item.total.toFixed(2)}</td>
+                    <td style="padding: 10px;">${item.status}</td>
+                    <td style="padding: 10px;">${item.date}</td>
+                    <td style="padding: 10px;">
+                        <button class="delete-button" style="
+                            background-color: #d9534f;
+                            color: white;
+                            border: none;
+                            padding: 5px 10px;
+                            cursor: pointer;
+                            border-radius: 5px;
+                        ">刪單</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+
+            });
+
+            // 獲取刪單按鈕和彈出框元素
+            const deleteButtons = document.querySelectorAll('#delete-button');
+            const deleteModal = document.getElementById('deleteModal');
+            const deleteConfirmButton = document.getElementById('deleteConfirm');
+            const deleteCancelButton = document.getElementById('deleteCancel');
+        
+            // 為每個刪單按鈕添加點擊事件監聽器
+            deleteButtons.forEach(button => {
+              button.addEventListener('click', () => {
+                deleteModal.style.display = 'block';
+              });
+            });
+        
+            // 為確認刪除按鈕添加點擊事件監聽器
+            deleteConfirmButton.addEventListener('click', () => {
+              // 在這裡添加刪除訂單的邏輯
+              alert('訂單已刪除');
+              deleteModal.style.display = 'none';
+            });
+        
+            // 為取消按鈕添加點擊事件監聽器
+            deleteCancelButton.addEventListener('click', () => {
+              deleteModal.style.display = 'none';
+            });
+          </script>
+        </body>
+       
+

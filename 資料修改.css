@@ -1,0 +1,253 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: rgb(193, 231, 109) !important;
+    z-index: 1;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgb(219, 243, 167);
+    padding: 0 5vw;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu img{
+    float: left;
+    width: 6vw;
+    margin-right: 1.5vw;
+}
+
+nav{
+    position: relative;
+    clear: right;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu h2{
+    float: left;
+    position: relative;
+    font-size: 2.2vw;
+    font-family: sans-serif;
+    align-items: center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    transform: translateY(60%);
+} 
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    color: black;
+    font-family: sans-serif;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 2.2vw 1.5vw;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li a:hover{
+    background: rgba(1, 149, 135);
+    color: #fff;
+}
+
+nav ul li ul{
+    display: block;
+    background: rgba(255, 255, 255, .95);
+    position: absolute;
+    margin-top: 1px;
+    box-shadow: 0 0.2px 0.5px rgba(0, 0, 0, .5);
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    font-size: 15px;
+}
+
+nav ul li:hover ul{
+    opacity: 1;
+    visibility: visible;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    height: 3vw;
+    width: 100%;
+    background: rgb(219, 243, 167);
+    padding: 0 5vw;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer img{
+    display: block;
+    margin: 0 auto;
+    max-width: 1vw;
+    height: auto;
+    font-size: 2.2vw;
+    font-family: sans-serif; 
+}
+
+.modal-header h3 {
+    font-size: 30px;
+    color: blueviolet;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-body h3{
+    font-family: sans-serif;
+    font-size: 88%;
+}
+
+.modal-content {
+    background-color: burlywood;
+}
+
+.modal-body form .account,
+.modal-body form .password {
+    margin: 30px;
+    width: 90%;
+    border-radius: 20px;
+}
+
+.remember {
+    margin-bottom: 20px;
+}
+
+.modal-body form .btn {
+    width: 100%;
+    font-size: 25px;
+    color: white;
+}
+
+.aside a img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width:4vw;
+}
+
+.content {
+    padding: 20px;
+    margin-top: 100px; /* 確保內容在導航菜單下面 */
+}
+
+.data-form {
+    background-color: rgba(255, 255, 255, 0.7);;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 2cm; /* 將表格向右縮2公分 */
+}
+
+.data-form .btn {
+    min-width: 100px; /* 修改完成按鈕的最小寬度，這裡設定為100px */
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5cm;
+}
+
+
+.data-form .row {
+    margin-bottom: 15px;
+}
+
+.data-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.data-form input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.data-form .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.data-form .btn:hover {
+    background-color: #005148;
+}
+
+.vertical-text-container {
+    padding: 5px 10px; /* 缩小框的高度 */
+    margin-bottom: 0.5cm; /* 调整与下方表格的距离 */
+    margin-left: 2cm; /* 向右缩减2公分 */
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center;
+    background-color: #01415C;
+    border-radius: 10px;
+}
+
+.title {
+    font-weight: bold; /* 粗体字 */
+    text-align: center; /* 文字居中 */
+}
+
+.vertical-text {
+    color: white; /* 白色字体 */
+    font-weight: bold; /* 粗体字 */
+}
+
+.centered {
+    margin-left: 2cm; /* 向右移动 1.3 公分 */
+    /*margin-top: -2cm;*/
+
+}
+
+.data-form label {
+    font-weight: bold; /* 粗体 */
+    font-size: 16px; /* 字体大小 */
+}
+
+
+
+
+

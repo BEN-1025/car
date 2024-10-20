@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>代幣錢包</title> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="./資料專區-代幣錢包.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"type="application/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.5/dist/web3.min.js"></script>
+    <script src="./connectwallet1.js"></script>
+
+</head>
+<body>
+    <div class="menu">
+        <a href="./main.html" class="brand"><img src="./carbon/logo1.jpg"></a>
+        <nav>
+            <h2>CarbonLink</h2>
+            <ul>                
+                <li><a href="#">碳交易專區 V</a>
+                  <ul>
+                     <li><a href="./13碳交易專區-歷史交易紀錄.html">交易歷史紀錄</a></li>
+                     <li><a href="./15碳交易專區-碳權交易.html">交易碳權</a></li>
+                     <li><a href="#">查看碳權單位價格</a></li>
+                     <li><a href="./17碳交易專區-已委託清單.html">下單列表</a></li>   
+                  </ul>
+                </li>
+                <li><a href="#">資料專區 V</a>
+                  <ul>
+                    <li><a href="./資料專區-代幣錢包.html">代幣錢包</a></li>
+                    <li><a href="#">各公司碳盤列表</a></li>
+                    <li><a href="./資料修改.html">資料修改</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">綠樹成蔭 V</a>
+                    <ul>
+                        <li><a href="#">小樹苗數量</a></li>
+                        <li><a href="#">年度活動資訊</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">常見問題 V</a>
+                    <ul>
+                      <li><a href="#">常見問題</a></li>
+                      <li><a href="#">智能機器客服</a></li>
+                    </ul> 
+                </li>
+            
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>代幣錢包</h1>
+        <h2>交易 接收 淨零碳排無限可能！</h2>
+        <div class="info-box">
+            <div class="info-header">帳戶資訊</div>
+            <div class="info-content">
+                <p><strong>代幣餘額：</strong><span id="customTokenBalance"></span></p><br>
+                <p><strong>碳權餘額：</strong><span id="carbonBalance"></span></p><br>
+                <p><strong>錢包地址：</strong><span id="walletAddress"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="aside">
+        <aside>
+            <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#infomodal"><button onclick="connectWallet()"><img src="./carbon/身份標籤.jpg"></button></a>
+
+            <!-- 跳出視窗內容 -->
+        
+            <div class="modal fade" id="infomodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Header -->
+                        <div class="modal-header">
+                            <h3>帳戶資訊</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Body -->
+                        <div class="modal-body" id="modal-Body">
+                            <!-- 登入表單 -->
+                            <form>
+                                
+                                <div class="form-group">
+                                    <h3><strong>代幣餘額</strong><span id="customTokenBalance"></span></h3>
+                                    
+                                </div>
+                                <!-- password -->
+                                <div class="form-group">
+                                    <h3><strong>碳權餘額</strong></h3>
+                                </div>
+                                <!-- checkbox -->
+                                <div class="form-group">
+                                    <h3><strong>錢包地址</strong><span id="walletAddress"></span></h3>
+                                </div>
+                                <!-- 送出按鈕 -->
+                            </form>        
+                        </div>
+
+        
+        
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <div class="footer">
+        <footer>
+            <a href="#" class="brand1"><img src="./carbon/logo.jpg"></a>
+        </footer>
+    </div>
+</body>
+</html>

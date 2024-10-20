@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>碳權數量設定系統</title> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/碳權數量設定系統.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
+    <script src="/碳權數量設定系統.js"></script>
+</head>
+<body>
+    <div class="menu">
+        <a href="#" class="brand"><img src="/carbon/logo1.jpg"></a>
+        <nav>
+            <h2>CarbonLink</h2>
+        </nav>
+    </div>
+
+    <div class="aside">
+        <aside>
+            <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#infomodal"><img src="/carbon/管理員標籤.jpg"></a>
+
+            <!-- 跳出視窗內容 -->
+        
+            <div class="modal fade" id="infomodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Header -->
+                        <div class="modal-header">
+                            <h3>帳戶資訊</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Body -->
+                        <div class="modal-body" id="modal-Body">
+                            <!-- 登入表單 -->
+                            <form>
+                                
+                                <div class="form-group">
+                                    <h3><strong>代幣餘額</strong><span id="customTokenBalance"></span></h3>
+                                    
+                                </div>
+                                <!-- password -->
+                                <div class="form-group">
+                                    <h3><strong>碳權餘額</strong><span id="carbonBalance"></span></h3>
+                                </div>
+                                <!-- checkbox -->
+                                <div class="form-group">
+                                    <h3><strong>錢包地址</strong><span id="walletAddress"></span></h3>
+                                </div>
+                                <!-- 送出按鈕 -->
+                            </form>        
+                        </div>
+
+        
+        
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+    <div class="article">
+       <article>
+          <div class="title">
+              <h1><strong>碳權數量設定系統</strong></h1>
+          </div>
+          <div class="body-container">
+             <div class="company-container">
+                 <table class="company-table">
+                     <thead>
+                        <tr>
+                          <th class="company-name">公司名稱</th>
+                          <th class="carbon-amount">碳權數量</th>
+                        </tr> 
+                     </thead>
+                     <tbody>
+
+                     </tbody>
+                 </table>
+             </div>  
+          </div>
+          <div class="button-group">
+             <a href="/管理員管理系統.html"><button class="admin btn"><strong>管理員系統</strong></button></a>
+             <button class="btn btn-success confirm-submit-btn"><strong>確定送出</strong></button>
+          </div>                      
+        </article> 
+    </div>
+    <div class="footer">
+        <footer>
+            <a href="#" class="brand1"><img src="/carbon/logo.jpg"></a>
+        </footer>
+    </div>
+</body>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>初始登入頁面</title> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="./初始登入頁面1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="/js/showalert.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.8.0/web3.min.js"></script>
+    <script src="./顯示.js"></script>
+</head>
+<body>
+    <div class="menu">
+        <a href="#" class="brand"><img src="/carbon/logo1.jpg"></a>
+        <nav>
+            <h2>CarbonLink</h2>
+        </nav>
+    </div>
+
+    <div class="aside">
+        <aside>
+            <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#infomodal"><img src="/carbon/身份標籤.jpg"></a>
+
+            <!-- 跳出視窗內容 -->
+        
+            <div class="modal fade" id="infomodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Header -->
+                        <div class="modal-header">
+                            <h3>帳戶資訊</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Body -->
+                        <div class="modal-body" id="modal-Body">
+                            <!-- 登入表單 -->
+                            <form>
+                                
+                                <div class="form-group">
+                                    <h3>代幣餘額</h3>
+                                    
+                                </div>
+                                <!-- password -->
+                                <div class="form-group">
+                                    <h3>碳權餘額</h3>
+                                </div>
+                                <!-- checkbox -->
+                                <div class="form-group">
+                                    <h3>錢包地址</h3>
+                                </div>
+                                <!-- 送出按鈕 -->
+                            </form>        
+                        </div>
+
+        
+        
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+    <div class="content">
+        <div class="centered1">
+            <center><h1 class="title">歡迎來到CarbonLink您的智能碳交易解決方案<br>
+                為了開始使用我們的服務並連結您的專屬區快鏈錢包地址<br>
+                請提供以下資訊以加入CarbonLink
+            </h1></center>
+        </div>
+    <div class="content">
+        <div class="vertical-text-container">
+            <h3 class="vertical-text">公司資訊</h3>
+        </div>
+        <form class="data-form">
+            <div class="row">
+                <div class="col">
+                    <label for="company-name">公司名稱：</label>
+                    <input type="text" class="form-control" id="company-name" required>
+                </div>
+                <div class="col">
+                    <label for="business-address">營業地址：</label>
+                    <input type="text" class="form-control" id="business-address" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="taxid">統一編號：</label>
+                    <input type="text" class="form-control" id="taxid" required>
+                </div>
+                <div class="col">
+                    <label for="business-pin">工商憑證PIN碼：</label>
+                    <input type="text" class="form-control" id="business-pin" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="company-owner">公司負責人：</label>
+                    <input type="text" class="form-control" id="company-owner" required>
+                </div>
+                <div class="col">
+                    <label for="contract-phone">聯絡電話：</label>
+                    <input type="text" class="form-control" id="contract-phone" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="contact-person-name">聯絡人姓名：</label>
+                    <input type="text" class="form-control" id="contact-person-name" required>
+                </div>
+                <div class="col">
+                    <label for="position">職位：</label>
+                    <input type="text" class="form-control" id="position" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="id-number">身分證字號：</label>
+                    <input type="text" class="form-control" id="id-number" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="wallet-address">錢包地址：</label>
+                    <input type="text" class="form-control" id="wallet-address" required>
+                </div>
+            </div>
+            <div class = "text">
+                請確保所提供的資訊準確無誤，以便我們能夠為您創建並配發一個安全的區塊鏈錢包位址，讓您能夠順利進行碳交易
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary" onclick="handleRegisterCompany()"><b>加入CarbonLink</b></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="footer">
+        <footer>
+            <a href="#" class="brand1"><img src="/carbon/logo.jpg"></a>
+        </footer>
+    </div>
+</body>

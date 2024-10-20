@@ -1,0 +1,280 @@
+﻿/* CSS註釋：副標題的樣式 */
+.subtitle {
+  color: #000; /* 字體顏色 */
+  text-align: center; /* 文字對齊方式 */
+  align-self: center; /* 垂直置中對齊 */
+  margin-top: 100px; /* 上邊距 */
+  font: 600 48px Inter, sans-serif; /* 字體 */
+  margin-left: 120px; /* 左邊距 */
+}
+
+.subtitle {
+  position: relative; /* 設置定位方式為相對定位 */
+  top: -50px; /* 根據需要調整向下的距離 */
+  /* 其他樣式屬性 */
+}
+
+@media (max-width: 991px) {
+  /* CSS註釋：當視窗寬度小於991px時 */
+  .subtitle {
+    margin-top: 40px; /* 上邊距 */
+    font-size: 40px; /* 字體大小 */
+  }
+}
+
+.main-container {
+  justify-content: center; 
+  align-self: stretch; 
+  display: flex; 
+  flex-direction: column; 
+  font-size: 24px; 
+  color: #000; 
+  font-weight: 800; 
+  margin-top: 18%;
+  
+}
+
+.company-container {
+  justify-content: center; /* 水平置中對齊 */
+  display: flex; /* 以Flex方式顯示 */
+  margin-right: -80px;
+  flex-direction: column; /* 排列方向 */
+  padding: 10px; /* 內邊距 */
+}
+
+.company-table {
+  width: 50%;
+  margin: 0 auto; /* 將表格水平置中 */
+  border-collapse: collapse; /* 合併邊框 */
+  margin-top: 5vh;
+}
+
+.company-table th, .company-table td {
+  border: 1px solid #000; /* 邊框樣式 */
+  padding: 10px; /* 單元格內邊距 */
+  text-align: center; /* 文字置中 */
+  font-family: Inter, sans-serif; /* 字體 */
+}
+
+.company-name, .details-text, .review-header {
+  background-color: #005148; /* 背景顏色 */
+  color: rgb(255, 255, 255); /* 文字顏色 */
+  font-weight: 600; /* 字體粗細 */
+}
+
+.details{
+  color: #01415c;
+  cursor: pointer; /* 鼠标悬停时显示手型 */
+  
+}
+
+.details a {
+  text-decoration: none; /* 移除連結的下劃線 */
+  color: inherit; /* 保持連結文字的原始顏色 */
+}
+
+.review-box {
+  margin-top: 2px;
+  width: 44px;
+  height: 44px;
+  stroke-width: 1px;
+  stroke: #000;
+  border: 1px solid rgba(0, 0, 0, 1);
+  display: inline-block;
+}
+
+.review-box[type=checkbox] {
+  accent-color: #005148; /* Customize the checkbox color */
+}
+
+.main-section {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  margin-top: 10%;
+  width: 100%; /* 设置为100%，使其在父元素内居中 */
+  gap: 20px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 800;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.footer-section:hover {
+  background-color: #003d38; /* 鼠标悬停时按钮背景颜色 */
+}
+
+
+.action-section {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  border-radius: 10px;
+  background-color: #005148;
+  gap: 15px;
+  padding: 10px 15px;
+  margin-left: 100px; /* 调整这个值来控制右移的程度 */
+  border: none; /* 移除默认边框 */
+  color: #fff; /* 按钮文字颜色 */
+  font-size: 32px; /* 按钮字体大小 */
+  font-weight: 800; /* 按钮字体粗细 */
+  cursor: pointer; /* 鼠标悬停时显示手型 */
+}
+
+.action-section:hover {
+  background-color: #003d38; /* 鼠标悬停时按钮背景颜色 */  
+}
+
+/* 确保 .action-section 内的文本保持原有样式 */
+.action-text {
+  font-family: Inter, sans-serif;
+}
+
+/* 确保 .action-link 内的文本保持原有样式 */
+.action-link {
+  text-decoration: none; /* 移除超链接下划线 */
+  color: inherit; /* 使用继承的文本颜色 */
+  cursor: pointer; /* 显示手型指针 */
+}
+
+/* 重置 action-link 的樣式 */
+.action-link:hover {
+  text-decoration: none; /* 移除鼠标悬停时的下划线 */
+  color: inherit; /* 使用继承的文本颜色 */
+}
+
+/* 确保 .action-section 内的文本保持原有样式 */
+.action-text {
+  font-family: Inter, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* 合并的另一个CSS样式 */
+/* body样式 */
+body{
+    margin: 0;
+    padding:0;
+    font-family: sans-serif;
+    background-color:#fff;
+    overflow-x: hidden; /* 禁用水平滾動 */
+}
+
+section{
+    width:100%;
+    height:40vh;
+    background-size: cover;
+}
+
+.menu{
+    position:absolute;
+    top:0%;
+    width:100%;
+    background:rgb(0,81,72);
+    padding:0 5vw;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+.menu img{
+    float:left;
+    width:6vw;
+    margin-right: 1.5vw;
+}
+
+nav{
+    position:relative;
+    clear:right;
+}
+
+.menu h2{
+    color:#fff;
+    float:left;
+    font-size: 2.2vw;
+    font-family: sans-serif; 
+} 
+
+.footer{
+    position:fixed;
+    bottom:0;
+    height:3vw;
+    width:100%;
+    background:rgb(0,81,72);
+    padding:0 5vw;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.footer img{
+    display:block;
+    margin:0 auto;
+    max-width: 5% ;
+    height:auto;
+    font-size: 2.2vw;
+    font-family: sans-serif; 
+}
+
+.modal-header h3 {
+    font-size: 30px;
+    color: blueviolet;
+    /* 置中 */
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content {
+    margin-top: 80px;
+    background-color: burlywood;
+}
+
+.modal-body form .account,
+.modal-body form .password {
+    margin: 30px;
+    width: 90%;
+    border-radius: 20px;
+}
+
+.remember {
+    margin-bottom: 20px;
+}
+
+.modal-body form .btn {
+    width: 100%;
+    font-size: 25px;
+    color: white;
+}
+
+.aside a img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width:4vw;
+}
+
+.action-section{
+  margin-top: 5vh;
+}
+
+.btn-top{
+  position: relative;
+  z-index: 1000;
+  font-family: sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color:#005148
+}
+
+

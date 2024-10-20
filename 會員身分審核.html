@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>會員身分審核</title> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="會員身分審核.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.8.0/web3.min.js"></script>>
+    <script src="./審核.js"></script>
+</head>
+<body>
+    <div class="menu">
+        <a href="#" class="brand"><img src="./carbon/logo1.jpg"></a>
+        <nav>
+            <h2>CarbonLink</h2>
+        </nav>
+    </div>
+    <div class="aside">
+        <aside>
+            <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#infomodal"><button onclick="connectWallet()"><img src="./carbon/管理員標籤.jpg"></button></a>
+
+            <!-- 跳出視窗內容 -->
+        
+            <div class="modal fade" id="infomodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Header -->
+                        <div class="modal-header">
+                            <h3>帳戶資訊</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Body -->
+                        <div class="modal-body" id="modal-Body">
+                            <!-- 登入表單 -->
+                            <form>
+                                
+                                <div class="form-group">
+                                    <h3><strong>代幣餘額:</strong><span id="customTokenBalance"></span></h3>
+                                    
+                                </div>
+                                <!-- password -->
+
+                                <!-- checkbox -->
+                                <div class="form-group">
+                                    <h3><strong>錢包地址:</strong><span id="walletAddress"></span></h3>
+                                </div>
+                           </form>
+                       </div>
+        
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <header class="header">
+        <div class="subtitle"></div> <!-- 子標題 -->
+    </header>
+
+    <section class="main-container">
+        <div class="company-container">
+            <table class="company-table">
+                <thead>
+                    <tr>
+                        <th class="company-name">公司名稱</th>
+                        <th class="details-text">詳細資料</th>
+                        <th class="review-header">審核通過</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+
+                    <!-- Add other company rows here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="main-section">
+        <div class="action-section">
+            <a href="/管理員管理系統.html" class="action-link"><div class="action-text">管理系統</div></a> <!-- 頁尾按鈕1 -->
+        </div>
+        <div class="action-section">
+            <button type="button" class="btn btn-success confirm-submit-btn btn-top"><strong>確定送出</strong></button> <!-- 頁尾按鈕2 -->
+        </div>
+    </section>
+
+    <div class="footer">
+        <footer>
+            <a href="#" class="brand1"><img src="/carbon/logo.jpg"></a>
+        </footer>
+    </div>
+</body>
+</html>
